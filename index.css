@@ -1,0 +1,182 @@
+:root {
+  --bgImage: url('./images/edgebg.webp');
+  --headingColor: white;
+  --titleColor: white;
+  --buttonBg: #171717;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  background:black;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--bgImage);
+  background-repeat: no-repeat;
+  display: flex;
+  color: var(--headingColor);
+  flex-direction: column;
+  overflow-x: hidden;
+}
+header {
+  align-self: center;
+  padding: 5rem 0;
+}
+.searchField {
+  width: 55rem;
+  padding: 0.9rem 3.5rem;
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
+  border: 1px solid wheat;
+  border-radius: 3rem;
+}
+@media screen and (max-width: 1025px) {
+  .searchField {
+    width: 100%;
+  }
+}
+
+section {
+
+  max-width: 100%;
+  width: fit-content;
+  margin: 0 auto;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.containerRow::-webkit-scrollbar {
+  width: 0.1em;
+  height: 0.5rem;
+}
+
+.containerRow::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.containerRow::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.buttonLink {
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 1.5rem;
+}
+.buttonLink:hover {
+  box-shadow: 0px 3px 10px rgb(223 223 223/ 0.2);
+  border-radius: 1.5rem;
+}
+.buttonContainer {
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+  width: fit-content;
+  display: grid;
+  place-items: center;
+  width: auto;
+  min-width: 200px;
+  height: 200px;
+  background: var(--buttonBg);
+  border-radius: 1.5rem;
+}
+.buttonIcon {
+  width: 100px;
+  height: auto;
+}
+.buttonTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--headingColor);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items:center;
+  justify-content:center;
+}
+.containerRow {
+  padding: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items:center;
+  justify-content:center;
+  height: 250px;
+  overflow-x: auto;
+}
+@media screen and (max-width: 1200px) {
+  section,header{
+    margin: 0 3rem;
+  }
+  .containerRow {
+    height: 100%;
+    flex-wrap:wrap;
+  }
+}
+.containerGroup {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  gap: 1rem;
+}
+.containerGroup .buttonTitle {
+  display: none;
+}
+.containerGroup .buttonIcon {
+  width: 32px;
+  height: auto;
+}
+.containerGroup .buttonContainer {
+  min-width: 92px;
+  width: 92px;
+  height: 92px;
+  padding: 1.5rem;
+}
+.searchFieldContainer{
+  position:relative;
+  border-radius: 3rem;
+}
+.searchProviderContainer{
+  position:absolute;
+  top:50%;
+  left:1rem;
+  transform:translateY(-50%);
+
+}
+.searchProvider{
+  width:1.7rem;
+  height:100%;
+  object-fit:contain;
+}
+.searchProviderSelect {
+    webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 1.5rem;
+    height: 100%;
+    padding: 0 0.75rem;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    color: white;
+    border-bottom-right-radius: 1.5rem;
+}
+option {
+  background:black;
+  font-size: 1rem;
+  padding:1rem;
+}
