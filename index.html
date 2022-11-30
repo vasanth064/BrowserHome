@@ -9,25 +9,29 @@
   </head>
   <body>
     <header>
-      <form method="get" id='searchProviderForm'>
-      <div class='searchFieldContainer'>
-      <div class='searchProviderContainer'>
-        <img class='searchProvider' id='searchProviderImage'/>
-      </div>
-        <input
-          type="text"
-          name="q"
-          size="31"
-          maxlength="255"
-          value=""
-          placeholder="Search the web"
-          class="searchField"
-          autofocus
-          autocomplete='off'
-        />
-        <select class='searchProviderSelect' onChange="changeSearchProvider()"></select>
-        <input type="submit" value="Search" style="display: none" />
-      </div>
+      <form method="get" id="searchProviderForm" onSubmit="searchSubmit(e)">
+        <div class="searchFieldContainer">
+          <div class="searchProviderContainer">
+            <img class="searchProvider" id="searchProviderImage" />
+          </div>
+          <input
+            type="text"
+            name="q"
+            size="31"
+            maxlength="255"
+            value=""
+            placeholder="Search the web"
+            class="searchField"
+            id="searchField"
+            autofocus
+            autocomplete="off"
+          />
+          <select
+            class="searchProviderSelect"
+            onChange="changeSearchProvider()"
+          ></select>
+          <input type="submit" value="Search" style="display: none" />
+        </div>
       </form>
     </header>
     <section>
