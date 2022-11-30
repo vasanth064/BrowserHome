@@ -26,11 +26,12 @@
             autofocus
             autocomplete="off"
           />
-          <select
-            class="searchProviderSelect"
-            onChange="changeSearchProvider()"
-          ></select>
+          <div class="dropdown">
+            <p class="selected"></p>
+          </div>
+
           <input type="submit" value="Search" style="display: none" />
+          <ul class="options"></ul>
         </div>
       </form>
     </header>
@@ -41,5 +42,6 @@
     <script defer src="searchProvider.js"></script>
     <script defer src="data.js"></script>
     <script defer src="index.js"></script>
+    <script defer src="dropdown.js"></script>
   </body>
 </html>

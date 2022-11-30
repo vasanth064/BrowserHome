@@ -3,10 +3,14 @@ const button = document.querySelector('#button');
 const searchProviderImage = document.querySelector('#searchProviderImage');
 const searchProviderLink = document.querySelector('#searchProviderForm');
 const searchField = document.querySelector('#searchField');
+const option = document.querySelectorAll('.option');
+const selected = document.querySelector('.selected');
+const options = document.querySelector('.options');
 
-navigator.serviceWorker.register('./sw.js');
+// navigator.serviceWorker.register('./sw.js');
 const select = document.querySelector('select');
 
+// handling direct url searches
 searchProviderLink.addEventListener('submit', function (event) {
   if (searchField.value.includes('.')) {
     event.preventDefault();
@@ -14,20 +18,30 @@ searchProviderLink.addEventListener('submit', function (event) {
   }
 });
 
-searchProvider.forEach((provider) => {
-  const newOption = document.createElement('option');
-  const optionText = document.createTextNode(provider.title);
-  newOption.appendChild(optionText);
-  newOption.setAttribute('value', provider.title);
-  select.appendChild(newOption);
+selected.addEventListener('click', () => {
+  options.classList.toggle('optActive');
 });
 
+// populating provider dropdown with data from searchProvider.js
+searchProvider.forEach((provider) => {
+  const newOption = document.createElement('li');
+  newOption.innerHTML = provider.title;
+  newOption.classList.add('option');
+  options.appendChild(newOption);
+  newOption.addEventListener('click', () => {
+    selected.innerHTML = newOption.innerHTML;
+    options.classList.remove('optActive');
+    changeSearchProvider();
+  });
+});
+
+// change search provider
 function changeSearchProvider() {
-  const searchProviderName = select.value;
+  const searchProviderName = selected.innerHTML;
   const provider = searchProvider.filter(
     (provider) => provider.title == searchProviderName
   );
-  console.log(provider);
+
   localStorage.setItem('index', provider[0].index);
   localStorage.setItem('title', provider[0].title);
   localStorage.setItem('link', provider[0].link);
@@ -36,6 +50,7 @@ function changeSearchProvider() {
   searchProviderLink.setAttribute('action', localStorage.getItem('link'));
 }
 
+//populating the quick links data from data.js
 data.forEach((row) => {
   const containerRow = document.createElement('div');
   containerRow.classList.add('containerRow');
@@ -67,6 +82,8 @@ data.forEach((row) => {
     }
   });
 });
+
+//remembering previously used search provider
 searchProviderImage.setAttribute(
   'src',
   localStorage.getItem('image') || './images/google.webp'
@@ -75,6 +92,4 @@ searchProviderLink.setAttribute(
   'action',
   localStorage.getItem('link') || 'http://www.google.com/search'
 );
-document.querySelector('select').selectedIndex = parseInt(
-  localStorage.getItem('index')
-);
+selected.innerHTML = localStorage.getItem('title');
