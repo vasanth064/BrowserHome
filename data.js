@@ -13,7 +13,10 @@ const data = [
         link: 'https://www.instagram.com/',
         icon: './images/Instagram.webp',
       },
-
+      {
+        link: 'https://www.linkedin.com/feed/',
+        icon: './images/linkedIn.webp',
+      },
     ],
     {
       link: 'https://mail.google.com/mail/u/0/',
@@ -32,17 +35,19 @@ const data = [
     },
     [
       {
-        link: 'https://console.firebase.google.com/u/1/',
-        icon: './images/firebase.webp',
+        link: 'https://leetcode.com/study-plan/',
+        icon: './images/leetCode.webp',
       },
+      {
+        link: 'https://www.hackerrank.com/dashboard',
+        icon: './images/hackerRank.webp',
+      },
+
       {
         link: 'https://app.netlify.com/teams/v-dev01/overview',
         icon: './images/netlify.webp',
       },
-      {
-        link: 'https://www.figma.com/files/recent',
-        icon: './images/figma.webp',
-      },
+
       {
         link: 'https://cloud.mongodb.com/v2/',
         icon: './images/mongodb.webp',
@@ -51,10 +56,11 @@ const data = [
   ],
   [
     {
-      link: 'https://notion.so',
-      icon: './images/notion.webp',
+      link: 'https://www.youtube.com/feed/history',
+      icon: './images/youtube.webp',
       title: false,
     },
+
     [
       {
         link: 'https://docs.google.com/document/u/0/',
@@ -69,14 +75,13 @@ const data = [
         icon: './images/slides.webp',
       },
       {
-        link:'https://drive.google.com/drive/u/0/',
-        icon:'./images/googleDrive.webp',
+        link: 'https://drive.google.com/drive/u/0/',
+        icon: './images/googleDrive.webp',
       },
     ],
-
     {
-      link: 'https://github.com/vasanth064',
-      icon: './images/github.webp',
+      link: 'https://notion.so',
+      icon: './images/notion.webp',
       title: false,
     },
     [
@@ -105,15 +110,37 @@ const data = [
   ],
   [
     {
-        link: 'https://www.youtube.com/',
-        icon: './images/youtube.webp',
-        title: false,
-     },
-         {
-        link: 'https://music.youtube.com/',
-        icon: './images/youtubeMusic.webp',
-        title: false,
-     },
+      link: 'https://github.com/vasanth064',
+      icon: './images/github.webp',
+    },
+    {
+      link: 'https://console.aws.amazon.com/console/home',
+      icon: './images/aws.webp',
+    },
+    {
+      link: 'http://127.0.0.1:8000/',
+      icon: './images/django.webp',
+    },
+    {
+      link: 'https://console.firebase.google.com/u/1/',
+      icon: './images/firebase.webp',
+    },
+    {
+      link: 'https://www.figma.com/files/recent',
+      icon: './images/figma.webp',
+    },
+  ],
+  [
+    {
+      link: 'https://music.youtube.com/',
+      icon: './images/youtubeMusic.webp',
+      title: false,
+    },
+    {
+      link: 'http://127.0.0.1:32400/web/',
+      icon: './images/plex.webp',
+      title: false,
+    },
     {
       link: 'https://www.primevideo.com/',
       icon: './images/prime.webp',
@@ -121,7 +148,7 @@ const data = [
     },
     {
       link: 'https://www.hotstar.com/in',
-      icon: './images/hotstart.webp',
+      icon: './images/hotstar.webp',
       title: false,
     },
     {
