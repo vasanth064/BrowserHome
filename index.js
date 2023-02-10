@@ -83,6 +83,10 @@ data.forEach((row) => {
   });
 });
 
+//defining the cache previously used search provider for first time use
+if (localStorage.getItem('title') == undefined) {
+  localStorage.setItem('title', 'Google');
+}
 //remembering previously used search provider
 searchProviderImage.setAttribute(
   'src',
