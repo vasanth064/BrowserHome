@@ -23,11 +23,25 @@ const data = [
       icon: './images/gmail.webp',
       title: 'vasanth2011',
     },
-    {
-      link: 'https://mail.google.com/mail/u/1/',
-      icon: './images/gmail.webp',
-      title: 'vasanthvdev',
-    },
+    [
+      {
+        link: 'https://github.com/vasanth064',
+        icon: './images/github.webp',
+      },
+      {
+        link: 'http://127.0.0.1:8000/',
+        icon: './images/django.webp',
+      },
+      {
+        link: 'https://bitbucket.org/account/workspaces/',
+        icon: './images/bitBucket.webp',
+      },
+      {
+        link: 'http://localhost:5173/',
+        icon: './images/vite.webp',
+      },
+    ],
+
     {
       link: 'https://mail.google.com/mail/u/2/',
       icon: './images/gmail.webp',
@@ -56,11 +70,10 @@ const data = [
   ],
   [
     {
-      link: 'https://www.youtube.com/feed/history',
-      icon: './images/youtube.webp',
-      title: false,
+      link: 'https://mail.google.com/mail/u/1/',
+      icon: './images/gmail.webp',
+      title: 'vasanthvdev',
     },
-
     [
       {
         link: 'https://docs.google.com/document/u/0/',
@@ -80,8 +93,8 @@ const data = [
       },
     ],
     {
-      link: 'https://notion.so',
-      icon: './images/notion.webp',
+      link: 'https://www.youtube.com/feed/history',
+      icon: './images/youtube.webp',
       title: false,
     },
     [
@@ -110,16 +123,18 @@ const data = [
   ],
   [
     {
-      link: 'https://github.com/vasanth064',
-      icon: './images/github.webp',
+      link: 'https://bard.google.com/',
+      icon: './images/bard.webp',
     },
+    {
+      link: 'https://notion.so',
+      icon: './images/notion.webp',
+      title: false,
+    },
+
     {
       link: 'https://console.aws.amazon.com/console/home',
       icon: './images/aws.webp',
-    },
-    {
-      link: 'http://127.0.0.1:8000/',
-      icon: './images/django.webp',
     },
     {
       link: 'https://console.firebase.google.com/u/1/',
