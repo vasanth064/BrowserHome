@@ -1,8 +1,9 @@
 :root {
-  --bgImage: url('./images/edgebg.webp');
+  --bgImage: url('https://source.unsplash.com/random/1920×1080?nature'),
+    url('./images/bg2.webp');
   --headingColor: white;
   --titleColor: white;
-  --buttonBg: #171717;
+  --buttonBg: rgba(0, 0, 0, 0.6);
 }
 *,
 *::after,
@@ -22,6 +23,7 @@ body {
   background-repeat: no-repeat;
   display: flex;
   color: var(--headingColor);
+  background-size: cover;
   flex-direction: column;
   overflow-x: hidden;
 }
@@ -31,11 +33,13 @@ header {
 }
 .searchField {
   width: 55rem;
-  padding: 0.9rem 3.5rem;
-  background-color: black;
+  padding: 1.2rem 3.5rem;
+  backdrop-filter: blur(5px);
+  background: var(--buttonBg);
   color: white;
   font-size: 1.1rem;
-  border: 1px solid wheat;
+  border: none;
+  outline: none;
   border-radius: 3rem;
 }
 @media screen and (max-width: 1025px) {
@@ -87,6 +91,7 @@ h1 {
   height: 200px;
   background: var(--buttonBg);
   border-radius: 1.5rem;
+  backdrop-filter: blur(60px);
 }
 .buttonIcon {
   width: 100px;
@@ -151,6 +156,7 @@ h1 {
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
+  z-index: 1;
 }
 .searchProvider {
   width: 1.7rem;
@@ -178,13 +184,15 @@ h1 {
   font-size: 1rem;
   cursor: default;
   padding: 0.75rem;
+  border-radius: 5%;
 }
 .option:hover {
-  background: rgba(25, 25, 25);
+  backdrop-filter: blur(60px);
+  background: var(--buttonBg);
   border-radius: 5%;
 }
 .options {
-  background: rgb(32, 32, 32);
+  background: var(--buttonBg);
   border-radius: 5%;
   margin: 1rem 2rem;
   list-style: none;
