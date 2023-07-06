@@ -49,7 +49,7 @@ const data = [
     },
     [
       {
-        link: 'https://leetcode.com/study-plan/',
+        link: 'https://leetcode.com/problemset/all/',
         icon: './images/leetCode.webp',
       },
       {
@@ -122,10 +122,16 @@ const data = [
     },
   ],
   [
-    {
-      link: 'https://bard.google.com/',
-      icon: './images/bard.webp',
-    },
+    [
+      {
+        link: 'https://bard.google.com/',
+        icon: './images/bard.webp',
+      },
+      {
+        link: 'https://chat.openai.com/',
+        icon: './images/chatgpt.webp',
+      },
+    ],
     {
       link: 'https://notion.so',
       icon: './images/notion.webp',
