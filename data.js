@@ -53,8 +53,8 @@ const data = [
         icon: './images/leetCode.webp',
       },
       {
-        link: 'https://www.hackerrank.com/dashboard',
-        icon: './images/hackerRank.webp',
+        link: 'https://www.udemy.com/home/my-courses/learning/',
+        icon: './images/udemy.webp',
       },
 
       {
