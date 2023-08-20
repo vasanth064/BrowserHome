@@ -158,8 +158,8 @@ const data = [
       title: false,
     },
     {
-      link: 'http://127.0.0.1:32400/web/',
-      icon: './images/plex.webp',
+      link: 'http://localhost:8096/web/',
+      icon: './images/jellyFin.webp',
       title: false,
     },
     {
