@@ -74,7 +74,11 @@ data.forEach((row) => {
         containerGroup.innerHTML += `
         <a href="${item.link}" class="buttonLink">
           <div class="buttonContainer">
-            <img class="buttonIcon" src="${item.icon}" />
+          ${
+            item.icon
+              ? `<img class="buttonIcon" src="${item.icon}" />`
+              : `<p class="buttonIcon" >${item.initial}</p>`
+          }
           </div>
         </a>
       `;

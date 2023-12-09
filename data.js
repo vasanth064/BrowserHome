@@ -53,8 +53,8 @@ const data = [
         icon: './images/leetCode.webp',
       },
       {
-        link: 'https://www.udemy.com/home/my-courses/learning/',
-        icon: './images/udemy.webp',
+        link: 'https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/',
+        initial: '🔱 T',
       },
 
       {
@@ -158,7 +158,7 @@ const data = [
       title: false,
     },
     {
-      link: 'http://localhost:8096/web/',
+      link: 'http://localhost:8096/',
       icon: './images/jellyFin.webp',
       title: false,
     },
