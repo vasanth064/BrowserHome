@@ -28,8 +28,10 @@ body {
   overflow-x: hidden;
 }
 header {
-  align-self: center;
-  padding: 5rem 0 2.5rem 0;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  height: 250px;
 }
 .searchField {
   width: 55rem;
@@ -154,6 +156,7 @@ h1 {
 .searchFieldContainer {
   position: relative;
   border-radius: 3rem;
+  /* align-self: center; */
 }
 .searchProviderContainer {
   position: absolute;
@@ -207,4 +210,80 @@ h1 {
 }
 .optActive {
   display: block;
+}
+.todoContainer {
+  width: 300px;
+  height: 100%;
+  position: relative;
+  backdrop-filter: blur(5px);
+  background: var(--buttonBg);
+  border-radius: 15px;
+  margin: 10px;
+  overflow: hidden;
+}
+#searchProviderForm {
+  align-self: center;
+}
+.todoInput,
+.todoSubmit {
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px 10px;
+  border: 1px solid black;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+}
+.todoSubmit {
+  z-index: 99;
+}
+.todoContainer li {
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  margin: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+.todoContainer p {
+  display: block;
+  height: auto;
+  width: 70%;
+  overflow-wrap: break-word;
+}
+ul::-webkit-scrollbar {
+  width: 1px;
+}
+.todoContainer ul {
+  overflow-y: scroll;
+  height: 100%;
+}
+.todoContainer:first-child ul {
+  height: 85%;
+}
+.todoContainer li button {
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  border: none;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+.todoContainer:last-child {
+  margin-right: 25px;
+}
+.todoImage {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 12.5;
 }

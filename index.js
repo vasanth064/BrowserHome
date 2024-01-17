@@ -6,13 +6,16 @@ const searchField = document.querySelector('#searchField');
 const option = document.querySelectorAll('.option');
 const selected = document.querySelector('.selected');
 const options = document.querySelector('.options');
+const todoInput = document.querySelector('#todoForm');
+const todoList = document.querySelectorAll('#todoList');
+const removeTodoBtn = document.querySelector('#removeTodo');
 
 // navigator.serviceWorker.register('./sw.js');
 const select = document.querySelector('select');
 
 // handling direct url searches
 searchProviderLink.addEventListener('submit', function (event) {
-  if (searchField.value.includes('.')) {
+  if (searchField.includes('.')) {
     event.preventDefault();
     window.location.href = `http://${searchField.value}`;
   }
@@ -91,6 +94,9 @@ data.forEach((row) => {
 if (localStorage.getItem('title') == undefined) {
   localStorage.setItem('title', 'Google');
 }
+if (localStorage.getItem('todos') == undefined) {
+  localStorage.setItem('todos', '[]');
+}
 //remembering previously used search provider
 searchProviderImage.setAttribute(
   'src',
@@ -101,3 +107,54 @@ searchProviderLink.setAttribute(
   localStorage.getItem('link') || 'http://www.google.com/search'
 );
 selected.innerHTML = localStorage.getItem('title');
+
+todoInput.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let todo = {
+    id: Date.now(),
+    todo: e.target[0].value,
+  };
+  let todos = JSON.parse(localStorage.getItem('todos'));
+  todos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+  e.target.reset();
+  appendTodo(todo);
+});
+const removeTodo = (todoId) => {
+  let todos = JSON.parse(localStorage.getItem('todos'));
+  let modTodos = todos.filter(({ id }) => id != todoId);
+  localStorage.setItem('todos', JSON.stringify(modTodos));
+  todoList[0].innerHTML = '';
+  todoList[1].innerHTML = '';
+  modTodos.map((todo) => {
+    appendTodo(todo);
+  });
+};
+const appendTodo = (todo) => {
+  const todoItem = document.createElement('li');
+  const todoText = document.createElement('p');
+  const todoButton = document.createElement('button');
+  const todoImg = document.createElement('img');
+  todoButton.setAttribute('onClick', `removeTodo(${todo.id})`);
+  todoText.innerHTML = todo.todo;
+  todoButton.innerHTML = 'X';
+  todoImg.classList.add('todoImage');
+
+  if (todo.todo.includes('.')) {
+    todoImg.src = `http://www.google.com/s2/favicons?domain=${todo.todo}`;
+    todoItem.appendChild(todoImg);
+    todoItem.appendChild(todoText);
+    todoItem.appendChild(todoButton);
+    todoList[1].appendChild(todoItem);
+  } else {
+    todoItem.appendChild(todoText);
+    todoItem.appendChild(todoButton);
+    todoList[0].appendChild(todoItem);
+  }
+};
+
+JSON.parse(localStorage.getItem('todos')).map((todo) => {
+  todoList[0].innerHTML = '';
+  todoList[1].innerHTML = '';
+  appendTodo(todo);
+});
