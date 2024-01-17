@@ -131,6 +131,7 @@ const removeTodo = (todoId) => {
   });
 };
 const appendTodo = (todo) => {
+  const todoLink = document.createElement('a');
   const todoItem = document.createElement('li');
   const todoText = document.createElement('p');
   const todoButton = document.createElement('button');
@@ -142,8 +143,10 @@ const appendTodo = (todo) => {
 
   if (todo.todo.includes('.')) {
     todoImg.src = `http://www.google.com/s2/favicons?domain=${todo.todo}`;
-    todoItem.appendChild(todoImg);
-    todoItem.appendChild(todoText);
+    todoLink.href = todo.todo;
+    todoLink.appendChild(todoImg);
+    todoLink.appendChild(todoText);
+    todoItem.appendChild(todoLink);
     todoItem.appendChild(todoButton);
     todoList[1].appendChild(todoItem);
   } else {
@@ -154,7 +157,5 @@ const appendTodo = (todo) => {
 };
 
 JSON.parse(localStorage.getItem('todos')).map((todo) => {
-  todoList[0].innerHTML = '';
-  todoList[1].innerHTML = '';
   appendTodo(todo);
 });
