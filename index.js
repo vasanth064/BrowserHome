@@ -114,6 +114,12 @@ todoInput.addEventListener('submit', (e) => {
     id: Date.now(),
     todo: e.target[0].value,
   };
+
+  if (e.target[0].value.includes('.')) {
+    title = prompt('Enter a title for the link');
+    todo.title = title;
+  }
+
   let todos = JSON.parse(localStorage.getItem('todos'));
   todos.push(todo);
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -137,11 +143,11 @@ const appendTodo = (todo) => {
   const todoButton = document.createElement('button');
   const todoImg = document.createElement('img');
   todoButton.setAttribute('onClick', `removeTodo(${todo.id})`);
-  todoText.innerHTML = todo.todo;
   todoButton.innerHTML = 'X';
   todoImg.classList.add('todoImage');
 
   if (todo.todo.includes('.')) {
+    todoText.innerHTML = todo.title;
     todoImg.src = `http://www.google.com/s2/favicons?domain=${todo.todo}`;
     todoLink.href = todo.todo;
     todoLink.appendChild(todoImg);
@@ -150,6 +156,7 @@ const appendTodo = (todo) => {
     todoItem.appendChild(todoButton);
     todoList[1].appendChild(todoItem);
   } else {
+    todoText.innerHTML = todo.todo;
     todoItem.appendChild(todoText);
     todoItem.appendChild(todoButton);
     todoList[0].appendChild(todoItem);
