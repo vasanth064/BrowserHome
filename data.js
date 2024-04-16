@@ -124,8 +124,12 @@ const data = [
   [
     [
       {
-        link: 'https://bard.google.com/',
+        link: 'https://gemini.google.com/',
         icon: './images/bard.webp',
+      },
+      {
+        link: 'https://claude.ai/',
+        icon: './images/claude.webp',
       },
       {
         link: 'https://chat.openai.com/',
